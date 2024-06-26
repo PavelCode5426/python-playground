@@ -1,0 +1,1 @@
+D:\Desarrollo\Proyectos\web-scrapy\venv\Scripts\python.exe D:/Desarrollo/Proyectos/web-scrapy/downloadly-tutorials.py 
