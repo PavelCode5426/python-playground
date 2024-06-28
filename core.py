@@ -34,11 +34,13 @@ def from_url_to_tutorial(url) -> Tutorial:
     soup = BeautifulSoup(r.text, 'lxml')
 
     title = soup.title.string
-    links = soup.find_all('a', href=re.compile(r'.rar$'))
+    links = soup.find_all('a', href=True)
 
     tutorial = Tutorial(title)
     for link in links:
-        tutorial.files.append(f"{link.get('href')}\n")
+        href = link.get('href')
+        if ".rar" in href:
+            tutorial.files.append(f"{href}\n")
     return tutorial
 
 
